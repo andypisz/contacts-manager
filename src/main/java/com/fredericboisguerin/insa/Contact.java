@@ -8,7 +8,7 @@ public class Contact {
 
     public Contact(String name, String email, String phoneNumber) throws InvalidContactNameException{
 
-        if (name == null){
+        if (name == null || name == ""){
             throw new InvalidContactNameException();
         }
         else{
