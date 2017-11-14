@@ -4,17 +4,17 @@ public class ContactsManager {
 
     private String name;
     //private String email;
-    //private String phoneNumber;
+    private String phoneNumber;
 
 
     public void addContact(String name, String email, String phoneNumber) {
         this.name = name;
         //this.email = email;
-        //this.phoneNumber = phoneNumber;
+        this.phoneNumber = phoneNumber;
     }
 
     public void printAllContacts() {
-        System.out.println(this.name);
+        System.out.println(this.name+", "+this.phoneNumber);
     }
 
     public void searchContactByName(String name) {
