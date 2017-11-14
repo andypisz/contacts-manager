@@ -1,31 +1,20 @@
 package com.fredericboisguerin.insa;
 
+import java.util.ArrayList;
+
 public class ContactsManager {
 
-    private String name;
-    private String email;
-    private String phoneNumber;
+    private ArrayList<Contact> listeDesManagers = new ArrayList<Contact>();
 
 
     public void addContact(String name, String email, String phoneNumber) {
-        this.name = name;
-        this.email = email;
-        this.phoneNumber = phoneNumber;
+        Contact contact = new Contact(name,email,phoneNumber);
+        listeDesManagers.add(contact);
     }
 
     public void printAllContacts() {
-        if (this.email == null && this.phoneNumber != null){
-            System.out.println(this.name+", "+this.phoneNumber);
-        }
-        else if (this.email != null && this.phoneNumber == null){
-            System.out.println(this.name+", "+this.email);
-        }
-        else if (this.email == null && this.phoneNumber == null){
-            System.out.println(this.name);
-        }
-        else{
-            System.out.println(this.name+", "+this.email+", "+this.phoneNumber);
-        }
+        //listeDesManagers.forEach(contact -> );
+        System.out.println(listeDesManagers.get(0));
     }
 
     public void searchContactByName(String name) {
