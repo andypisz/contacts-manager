@@ -13,8 +13,7 @@ public class ContactsManager {
     }
 
     public void printAllContacts() {
-        //listeDesManagers.forEach(contact -> );
-        System.out.println(listeDesManagers.get(0));
+        listeDesManagers.forEach(contact -> System.out.println(contact));
     }
 
     public void searchContactByName(String name) {
