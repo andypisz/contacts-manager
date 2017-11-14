@@ -17,6 +17,11 @@ public class ContactsManager {
     }
 
     public void searchContactByName(String name) {
+        for(Contact c : listeDesManagers){
+            if (c.getName().toLowerCase().contains(name.toLowerCase())){
+                System.out.println(c);
+            }
 
+        }
     }
 }

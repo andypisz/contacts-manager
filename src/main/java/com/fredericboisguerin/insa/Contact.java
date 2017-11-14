@@ -16,14 +16,6 @@ public class Contact {
         return name;
     }
 
-    public String getEmail() {
-        return email;
-    }
-
-    public String getPhoneNumber() {
-        return phoneNumber;
-    }
-
     @Override
     public String toString() {
         if (this.email == null && this.phoneNumber != null){
