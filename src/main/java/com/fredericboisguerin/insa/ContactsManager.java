@@ -7,7 +7,7 @@ public class ContactsManager {
     private ArrayList<Contact> listeDesManagers = new ArrayList<Contact>();
 
 
-    public void addContact(String name, String email, String phoneNumber) {
+    public void addContact(String name, String email, String phoneNumber) throws InvalidContactNameException {
         Contact contact = new Contact(name,email,phoneNumber);
         listeDesManagers.add(contact);
     }

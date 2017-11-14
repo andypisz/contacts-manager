@@ -6,10 +6,17 @@ public class Contact {
     private String email;
     private String phoneNumber;
 
-    public Contact(String name, String email, String phoneNumber) {
-        this.name = name;
-        this.email = email;
-        this.phoneNumber = phoneNumber;
+    public Contact(String name, String email, String phoneNumber) throws InvalidContactNameException{
+
+        if (name == null){
+            throw new InvalidContactNameException();
+        }
+        else{
+            this.name = name;
+            this.email = email;
+            this.phoneNumber = phoneNumber;
+        }
+
     }
 
     public String getName() {
@@ -18,6 +25,8 @@ public class Contact {
 
     @Override
     public String toString() {
+
+
         if (this.email == null && this.phoneNumber != null){
             return this.name+", "+this.phoneNumber;
         }
@@ -30,5 +39,8 @@ public class Contact {
         else{
             return this.name+", "+this.email+", "+this.phoneNumber;
         }
+
+
+
     }
 }
