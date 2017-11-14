@@ -6,16 +6,19 @@ public class Contact {
     private String email;
     private String phoneNumber;
 
-    public Contact(String name, String email, String phoneNumber) throws InvalidContactNameException{
+    public Contact(String name, String email, String phoneNumber) throws InvalidContactNameException, InvalidEmailException{
 
         if (name == null || name == ""){
             throw new InvalidContactNameException();
         }
-        else{
-            this.name = name;
-            this.email = email;
-            this.phoneNumber = phoneNumber;
+        if (!(email.contains("@") && email.contains("."))){
+            throw new InvalidEmailException();
         }
+
+        this.name = name;
+        this.email = email;
+        this.phoneNumber = phoneNumber;
+
 
     }
 
