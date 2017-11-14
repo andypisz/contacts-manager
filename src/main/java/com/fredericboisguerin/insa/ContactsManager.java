@@ -23,6 +23,9 @@ public class ContactsManager {
         else if (this.email == null && this.phoneNumber == null){
             System.out.println(this.name);
         }
+        else{
+            System.out.println(this.name+", "+this.email+", "+this.phoneNumber);
+        }
     }
 
     public void searchContactByName(String name) {
