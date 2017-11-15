@@ -11,7 +11,7 @@ public class Contact {
         if (name == null || name == ""){
             throw new InvalidContactNameException();
         }
-        if (!(email.contains("@") && email.contains("."))){
+        if (email != null && (!email.contains("@") ||  !email.contains("."))){
             throw new InvalidEmailException();
         }
 
