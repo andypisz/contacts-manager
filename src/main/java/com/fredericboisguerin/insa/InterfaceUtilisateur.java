@@ -1,12 +1,13 @@
 package com.fredericboisguerin.insa;
 
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class InterfaceUtilisateur {
 
     private ContactsManager cm;
 
-    public InterfaceUtilisateur(ContactsManager cm) throws InvalidEmailException, InvalidContactNameException {
+    public InterfaceUtilisateur(ContactsManager cm) throws InvalidEmailException, InvalidContactNameException{
         this.cm = cm;
         int choix;
 
@@ -34,7 +35,12 @@ public class InterfaceUtilisateur {
 
     public int getSelection(){
         Scanner sc = new Scanner(System.in);
-        int choix = sc.nextInt();
+        int choix;
+        try {
+            choix = sc.nextInt();
+        }catch (InputMismatchException e){
+            choix = -1;
+        }
         System.out.println();
         return choix;
     }
@@ -47,7 +53,7 @@ public class InterfaceUtilisateur {
         String nom = sc.nextLine();
         System.out.println("Veuillez entrer son email : ");
         String email = sc.nextLine();
-        System.out.println("Veuillez entre son numéro de téléphone : ");
+        System.out.println("Veuillez entrer son numéro de téléphone : ");
         String phoneNumber = sc.nextLine();
         //System.out.println("nom : "+nom+", email : "+email+", phone number : "+phoneNumber);
         cm.addContact(nom,email,phoneNumber);
@@ -90,7 +96,8 @@ public class InterfaceUtilisateur {
                 actionChercherContact();
                 break;
             default:
-                //erreur
+                System.out.println("Veuillez choisir un chiffre entre 0 et 3.");
+                System.out.println();
                 break;
 
         }
