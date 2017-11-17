@@ -23,6 +23,7 @@ public class InterfaceUtilisateur {
     }
 
     public void printMenu(){
+        System.out.println();
         System.out.println("Tapez le numéro de votre choix :");
         System.out.println();
         System.out.println("1 - Ajouter un contact à l'annuaire");
