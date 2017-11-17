@@ -31,14 +31,20 @@ public class InterfaceUtilisisateurMust {
     @Test
     public void add_a_contact() throws InvalidEmailException, InvalidContactNameException {
         ContactsManager manager = mock(ContactsManager.class);
-
         String interaction = ADD_CONTACT_USER_CHOICE+"\n"+NICOLE_FERRONI_NAME+"\n"+NICOLE_FERRONI_EMAIL+"\n"+NICOLE_FERRONI_PHONE_NUMBER+"\n"+LEAVE_USER_CHOICE+"\n";
-
         System.setIn(new ByteArrayInputStream(interaction.getBytes()));
-
         new InterfaceUtilisateur(manager);
-
         verify(manager).addContact(NICOLE_FERRONI_NAME, NICOLE_FERRONI_EMAIL, NICOLE_FERRONI_PHONE_NUMBER);
+        verifyNoMoreInteractions(manager);
+    }
 
+    @Test
+    public void print_all_contacts() throws InvalidEmailException, InvalidContactNameException {
+        ContactsManager manager = mock(ContactsManager.class);
+        String interaction = SHOW_CONTACTS_USER_CHOICE+"\n"+LEAVE_USER_CHOICE+"\n";
+        System.setIn(new ByteArrayInputStream(interaction.getBytes()));
+        new InterfaceUtilisateur(manager);
+        verify(manager).printAllContacts();
+        verifyNoMoreInteractions(manager);
     }
 }
