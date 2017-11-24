@@ -19,16 +19,6 @@ public class InterfaceUtilisisateurMust {
     private static final int LEAVE_USER_CHOICE = 0;
 
     @Test
-    public void inform_user_when_his_choice_is_wrong(){
-
-    }
-
-    @Test
-    public void offer_the_possibility_of_leaving(){
-
-    }
-
-    @Test
     public void add_a_contact() throws InvalidEmailException, InvalidContactNameException {
         ContactsManager manager = mock(ContactsManager.class);
         String interaction = ADD_CONTACT_USER_CHOICE+"\n"+NICOLE_FERRONI_NAME+"\n"+NICOLE_FERRONI_EMAIL+"\n"+NICOLE_FERRONI_PHONE_NUMBER+"\n"+LEAVE_USER_CHOICE+"\n";
